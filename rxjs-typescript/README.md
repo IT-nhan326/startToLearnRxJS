@@ -34,24 +34,21 @@ _When called they do not change the existing Observable instance. instead, they 
 
 _Piping help to write many *pipeable operators* consecutively is easy to read : **obs.pipe(op1(), op2(), op3())**
 
-1. **pipe(map())** : 
+1. **pipe(map())** : to transfer data to another preferrable type of data
 
-to transfer data to another preferrable type of data
-2. **pipe(throttleTime(milisecond))** :
+2. **pipe(throttleTime(milisecond))** : to only receiving signal from Observable every "milisecond"
 
-to only receiving signal from Observable every "milisecond"
-3. **pipe(filter())** : 
-similar to filter() JS
-4. **pipe(take(val))** : 
-unsubscribe operations after "val" times of execution
-5. **pipe(debounceTime(milisecond))** : 
-Emits a noti from Observable only after "milisecond" has passed without another emission (means since user stop interaction and since then the "milisecond" counted)
-6. **pipe((distinctUntilChanged())** : 
-comparison the default value based on the last emitted value
-7. **pipe(reduce((total,currValue) => return total + currValue))** : 
-emits the final value when the calculation complete
-8. **pipe(scan((total,currValue) => return total + currValue))** : 
-emits the sum after each steps => keeps track of latest state
+3. **pipe(filter())** : similar to filter() JS
+
+4. **pipe(take(val))** : unsubscribe operations after "val" times of execution
+
+5. **pipe(debounceTime(milisecond))** : Emits a noti from Observable only after "milisecond" has passed without another emission (means since user stop interaction and since then the "milisecond" counted)
+
+6. **pipe((distinctUntilChanged())** : comparison the default value based on the last emitted value
+
+7. **pipe(reduce((total,currValue) => return total + currValue))** : emits the final value when the calculation complete
+
+8. **pipe(scan((total,currValue) => return total + currValue))** : emits the sum after each steps => keeps track of latest state
 9. **pipe(pluck())** : 
 [Pluck](https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck) : 
 extract a properties from an object
