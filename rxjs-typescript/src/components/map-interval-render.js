@@ -1,24 +1,25 @@
-import { of } from "rxjs";
+import { interval } from "rxjs";
+import { map } from "rxjs/operators";
 import { useState, useEffect } from "react";
 import List from "../UI/List";
 
-const OfOperator = () => {
+const MapIntervalRender = () => {
   const [names, setNames] = useState();
 
   const source = ["Adam", "Brian", "Christine"];
-  const names$ = of(source);
+  const names$ = interval(1000).pipe(map(i => source.slice(0,i+1)));
 
   useEffect(() => {
     const subscription = names$.subscribe(setNames);
-    return () => subscription.unsubscribe()
+    return () => subscription.unsubscribe();
   }, []);
 
   return (
     <div className='App'>
-      <h1>Of Operator</h1>
+      <h1>MapIntervalRender</h1>
       {names && <List items={names} />}
     </div>
   );
 };
 
-export default OfOperator;
+export default MapIntervalRender;

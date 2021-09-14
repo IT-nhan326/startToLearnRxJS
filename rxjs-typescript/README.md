@@ -44,8 +44,16 @@ similar to filter() JS
 unsubscribe operations after "val" times of execution
 5. **pipe(debounceTime(milisecond))** : 
 Emits a noti from Observable only after "milisecond" has passed without another emission (means since user stop interaction and since then the "milisecond" counted)
-6. **(distinctUntilChanged())** : 
+6. **pipe((distinctUntilChanged())** : 
 comparison the default value based on the last emitted value
+7. **pipe(reduce((total,currValue) => return total + currValue))** : 
+emits the final value when the calculation complete
+8. **pipe(scan((total,currValue) => return total + currValue))** : 
+emits the sum after each steps => keeps track of latest state
+9. **pipe(pluck())**[Pluck](https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck) : 
+extract a properties from an object
+10. **pipe(mergeMap())**[mergeMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap)
+11. **pipe(switchMap())**
 
 ### **2. Creation Operators** : can be called as a standalone function to create new Observable 
 1. **of()** : 
