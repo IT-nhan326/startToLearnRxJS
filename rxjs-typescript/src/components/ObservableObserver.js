@@ -19,13 +19,7 @@ const ObservableObserver = () => {
   };
   
   observable.subscribe(observer)
-
-
-  return (
-    <div className='App'>
-      <h1>Observable-Observer</h1>
-    </div>
-  );
+  return null
 };
 
 export default ObservableObserver;
