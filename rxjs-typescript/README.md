@@ -35,6 +35,7 @@ _When called they do not change the existing Observable instance. instead, they 
 _Piping help to write many *pipeable operators* consecutively is easy to read : **obs.pipe(op1(), op2(), op3())**
 
 1. **pipe(map())** : 
+
 to transfer data to another preferrable type of data
 2. **pipe(throttleTime(milisecond))** : 
 to only receiving signal from Observable every "milisecond"
@@ -50,10 +51,12 @@ comparison the default value based on the last emitted value
 emits the final value when the calculation complete
 8. **pipe(scan((total,currValue) => return total + currValue))** : 
 emits the sum after each steps => keeps track of latest state
-9. **pipe(pluck())**[Pluck](https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck) : 
+9. **pipe(pluck())** : 
+[Pluck](https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck) : 
 extract a properties from an object
-10. **pipe(mergeMap())**[mergeMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap)
-11. **pipe(switchMap())**
+10. **pipe(mergeMap())** : 
+[mergeMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap)
+11. **pipe(switchMap())** : 
 
 ### **2. Creation Operators** : can be called as a standalone function to create new Observable 
 1. **of()** : 
