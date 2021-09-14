@@ -37,7 +37,8 @@ _Piping help to write many *pipeable operators* consecutively is easy to read : 
 1. **pipe(map())** : 
 
 to transfer data to another preferrable type of data
-2. **pipe(throttleTime(milisecond))** : 
+2. **pipe(throttleTime(milisecond))** :
+
 to only receiving signal from Observable every "milisecond"
 3. **pipe(filter())** : 
 similar to filter() JS
