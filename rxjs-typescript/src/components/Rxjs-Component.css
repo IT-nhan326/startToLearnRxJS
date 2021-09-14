@@ -1,0 +1,10 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    font-weight: 700;
+    background-color: aquamarine;
+}
