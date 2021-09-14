@@ -34,14 +34,14 @@ _When called they do not change the existing Observable instance. instead, they 
 
 _Piping help to write many *pipeable operators* consecutively is easy to read : **obs.pipe(op1(), op2(), op3())**
 
-1. **pipe(map())** : to transfer data to another preferrable type of data
-2. **pipe(throttleTime(milisecond))** : to only receiving signal from Observable every "milisecond"
-3. **pipe(filter())** : similar to filter() JS
-4. **pipe(take(val))** : unsubscribe operations after "val" times of execution
-5. **pipe(debounceTime(milisecond))** : Emits a noti from Observable only after "milisecond" has passed without another emission (means since user stop interaction and since then the "milisecond" counted)
-6. **(distinctUntilChanged())** : comparison the default value based on the last emitted value
+**1. pipe(map())** : to transfer data to another preferrable type of data
+**2. pipe(throttleTime(milisecond))** : to only receiving signal from Observable every "milisecond"
+**3. pipe(filter())** : similar to filter() JS
+**4. pipe(take(val))** : unsubscribe operations after "val" times of execution
+**5. pipe(debounceTime(milisecond))** : Emits a noti from Observable only after "milisecond" has passed without another emission (means since user stop interaction and since then the "milisecond" counted)
+**6. (distinctUntilChanged())** : comparison the default value based on the last emitted value
 
 ### **2. Creation Operators** : can be called as a standalone function to create new Observable 
-1. **of()** : of(1,2,3) will create an observable that emit 1, 2, 3 one right after another.
-2. **interval(milisecond) !== throttleTime(milisecond)** : takes a number (not Observable) as input and produces an Observable as output every "milisecond"
-3. **from()** : converts various other objects and data types into Observable. from([1,2,3]) will emits 1,2,3 unlike of() will emit [1,2,3]
+**1. of()** : of(1,2,3) will create an observable that emit 1, 2, 3 one right after another.
+**2. interval(milisecond) !== throttleTime(milisecond)** : takes a number (not Observable) as input and produces an Observable as output every "milisecond"
+**3. from()** : converts various other objects and data types into Observable. from([1,2,3]) will emits 1,2,3 unlike of() will emit [1,2,3]
