@@ -32,7 +32,7 @@
 ## 6. Behavior Subject : 
 1. BehaviorSubject can hold an initial value var **Holder$ = new BehaviorSubject(val)** or it can store the previous value passed in before calling another subcribe
 
-**Example** : 
+**Example** : <br/>
 const clickEmitted = new BehaviorSubject(0);<br/>
 clickEmitted.subscribe(print)<br/>
 clickEmitted.next(1)<br/>
