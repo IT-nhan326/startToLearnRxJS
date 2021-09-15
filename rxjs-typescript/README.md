@@ -39,7 +39,7 @@ clickEmitted.next(1)<br/>
 _Note_: calling subscribe after .next will get the value(1) unlike Subject, the later subscribe will not hold any value<br/>
 clickEmitted.subscribe()
 
-2. BehaviorSubject has a method which Subject doesnot have: **Holder$.getValue()** ( but RECOMMENDED research for it before using ... - Dont know if its recommened using or not ??? )
+2. BehaviorSubject has a method which Subject doesnot have: **Holder$.getValue()** ( but RECOMMENDED research for it before using ... - Dont know if its can be used or not since getValue() is imperative method ??? )
 3. [Examples](https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject)
 
 ## 7. Operators (all operator execute before subcribe()) :
