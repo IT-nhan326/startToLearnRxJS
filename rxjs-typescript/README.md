@@ -68,7 +68,11 @@ _Piping help to write many *pipeable operators* consecutively is easy to read : 
 
 10. **pipe(mergeMap())** -- [mergeMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap)
 
-11. **pipe(switchMap())** -- [switchMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap) : switchMap cancles previous HTTP requests that are still progress, while mergeMap lets all of them finish.
+11. **pipe(switchMap())** -- [switchMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap) : switchMap cancles previous HTTP requests that are still progress, while mergeMap lets all of them finish. SwitchMap also helpfull when we want to get a value that depends on another value.
+
+12. **pipe(takeWhile(v => condition of v))** : stop emitting value when the condition is false.
+
+13. **takenUntil(timer(2000))** : end the subscription untill the end of timer Observable
 
 ### **2. Creation Operators** : can be called as a standalone function to create new Observable 
 1. **of()** : 
