@@ -9,7 +9,7 @@ const MergeMap = () => {
   useEffect(() => {
     var obs1 = fromEvent(input1.current, "input");
     var obs2 = fromEvent(input2.current, "input");
-    const span = document.querySelector('span')
+    const span = document.getElementById("combineVal");
 
     obs1.pipe(mergeMap(event1 => {
         return obs2
@@ -28,12 +28,12 @@ const MergeMap = () => {
 
   return (
     <div>
+      <span>MergeMap </span>
       <input ref={input1} type='text' id='input1'></input>
       <input ref={input2} type='text' id='input2'></input>
-      <br />
       <p>
         Combine value: 
-        <span></span>
+        <span id='combineVal'></span>
       </p>
     </div>
   );

@@ -23,12 +23,26 @@
 1. to stop receiving signal from Observable anymore
 2. First store the subcription of Observable inside an variable. Then variable.unsubcribe() to stop the subcription
 
-## 5. Subject (EvenEmitter) :
+## 5. Subject (EventEmitter) :
 
 1. Rxjs Subject is a special type of Observable that allows values to be multicasted to many Observers.
 2. called subject.complete() will eventually stop values to communicate with every Observables
+3. Subject doesnot hold any value
 
-## 6. Operators (all operator execute before subcribe()) :
+## 6. Behavior Subject : 
+1. BehaviorSubject can hold an initial value var **Holder$ = new BehaviorSubject(val)** or it can store the previous value passed in before calling another subcribe
+
+**Example** : 
+const clickEmitted = new BehaviorSubject(0);__
+clickEmitted.subscribe(print)__
+clickEmitted.next(1)__
+Note: calling subscribe after .next will get the value(1) unlike Subject, the later subscribe will not hold any value__
+clickEmitted.subscribe()
+
+2. BehaviorSubject has a method which Subject doesnot have: **Holder$.getValue()** ( but RECOMMENDED research for it before using ... - Dont know if its recommened using or not ??? )
+3. [Examples](https://www.learnrxjs.io/learn-rxjs/subjects/behaviorsubject)
+
+## 7. Operators (all operator execute before subcribe()) :
 ### **1. Pipeable Operators** : 
 _When called they do not change the existing Observable instance. instead, they return a new Observable, whose subcription logic is based on the first 
 
@@ -49,17 +63,19 @@ _Piping help to write many *pipeable operators* consecutively is easy to read : 
 7. **pipe(reduce((total,currValue) => return total + currValue))** : emits the final value when the calculation complete
 
 8. **pipe(scan((total,currValue) => return total + currValue))** : emits the sum after each steps => keeps track of latest state
-9. **pipe(pluck())** : 
-[Pluck](https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck) : 
-extract a properties from an object
-10. **pipe(mergeMap())** : 
-[mergeMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap)
-11. **pipe(switchMap())** : 
+
+9. **pipe(pluck())** -- [Pluck](https://www.learnrxjs.io/learn-rxjs/operators/transformation/pluck) : extract a properties from an object
+
+10. **pipe(mergeMap())** -- [mergeMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap)
+
+11. **pipe(switchMap())** -- [switchMap](https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap) : switchMap cancles previous HTTP requests that are still progress, while mergeMap lets all of them finish.
 
 ### **2. Creation Operators** : can be called as a standalone function to create new Observable 
 1. **of()** : 
 of(1,2,3) will create an observable that emit 1, 2, 3 one right after another.
+
 2. **interval(milisecond) !== throttleTime(milisecond)** : 
 takes a number (not Observable) as input and produces an Observable as output every "milisecond"
+
 3. **from()** : 
 converts various other objects and data types into Observable. from([1,2,3]) will emits 1,2,3 unlike of() will emit [1,2,3]

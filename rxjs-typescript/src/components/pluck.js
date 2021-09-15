@@ -21,7 +21,12 @@ const Pluck = () => {
     return () => observable.unsubscribe();
   }, []);
 
-  return <input ref={inputField} className='input'></input>;
+  return (
+    <span>
+      <span>Pluck </span>
+      <input ref={inputField} className='input'></input>
+    </span>
+  );
 };
 
 export default Pluck;
